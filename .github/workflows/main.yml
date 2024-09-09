@@ -6,3 +6,28 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
      - run: echo -e " This is a Test"
+     - name: Checkout Repository
+       uses: actions/checkout@v2
+       
+     - name: Run Test Script
+       run: ./scripts/test_script.sh
+
+     - name: Upload artifact
+       uses: actions/upload-artifact@v3
+       with:
+         name: github-details
+         path: $HOME/github_details.txt
+         
+  job_2:
+    runs-on: ubuntu-latest
+    name: Display Artifact File
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-details
+          path: $HOME
+
+      - name: Display Artifact Content
+        run: cat $HOME/github_details.txt
