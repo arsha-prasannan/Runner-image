@@ -32,4 +32,5 @@ jobs:
           path: $HOME
 
       - name: Display Artifact Content
-        run: cat $HOME
+        run: ls $HOME & ls /home/runner/work/Runner-image/Runner-image/$HOME
+        
