@@ -18,7 +18,7 @@ jobs:
        uses: actions/upload-artifact@v3
        with:
          name: github-details
-         path: $HOME/github_details.txt
+         path: /home/runner/github_details.txt
          
   job_2:
     runs-on: ubuntu-latest
@@ -32,4 +32,4 @@ jobs:
           path: $HOME
 
       - name: Display Artifact Content
-        run: cat $HOME/github_details.txt
+        run: cat $HOME
