@@ -8,6 +8,8 @@ jobs:
      - run: echo -e " This is a Test"
      - name: Checkout Repository
        uses: actions/checkout@v2
+     - name: Change permission
+       run: chmod +x scripts/test.sh
        
      - name: Run Test Script
        run: ./scripts/test.sh
