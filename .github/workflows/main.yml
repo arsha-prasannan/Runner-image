@@ -10,7 +10,7 @@ jobs:
        uses: actions/checkout@v2
        
      - name: Run Test Script
-       run: ./scripts/test_script.sh
+       run: ./scripts/test.sh
 
      - name: Upload artifact
        uses: actions/upload-artifact@v3
