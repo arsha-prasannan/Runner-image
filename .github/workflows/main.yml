@@ -32,5 +32,5 @@ jobs:
           path: $HOME
 
       - name: Display Artifact Content
-        run: ls $HOME
+        run: ls $HOME/runners/
         
